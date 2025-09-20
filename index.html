@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tarjeta para tí amada mía</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Estrellas de fondo -->
+  <div class="bg-stars" aria-hidden="true">
+    <div class="particle" style="width:8px;height:8px;left:6%;top:12%;opacity:0.7"></div>
+    <div class="particle" style="width:6px;height:6px;left:85%;top:8%;animation-duration:10s;opacity:0.5"></div>
+    <div class="particle" style="width:10px;height:10px;left:34%;top:30%;animation-duration:12s;opacity:0.8"></div>
+    <div class="particle" style="width:6px;height:6px;left:58%;top:6%;animation-duration:9s;opacity:0.4"></div>
+  </div>
+
+  <div class="container">
+    <h1 id="frase" class="header">
+      <span class="glow">✨“Eres ese milagro inesperado que llegó a mi vida para llenarla de amor, calma y sonrisas. A tu lado, incluso la oscuridad brilla.✨</span>
+    </h1>
+
+    <div class="card">
+      <!-- SVG ramo estilizado -->
+      <svg class="art" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ramo de flores rosadas frondoso">
+        <defs>
+          <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+
+          <!-- Flor reutilizable -->
+          <g id="flower-shape">
+            <g filter="url(#softGlow)">
+              <g class="petals">
+                <!-- 12 pétalos -->
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(30)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(60)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(90)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(120)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(150)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(180)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(210)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(240)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(270)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(300)"/>
+                <path d="M0,-28 C12,-28 12,-10 0,-10 C-12,-10 -12,-28 0,-28Z" transform="rotate(330)"/>
+              </g>
+              <circle class="flower-center" r="12" fill="#fff"/>
+            </g>
+          </g>
+        </defs>
+
+        <!-- Tallos -->
+        <g stroke-linecap="round" stroke-width="5" stroke="#1e8a57">
+          <path class="stem" d="M150 300 C140 260 130 200 140 160"/>
+          <path class="stem" d="M160 310 C170 270 185 200 170 150"/>
+          <path class="stem" d="M140 320 C130 280 110 210 120 165"/>
+          <path class="stem" d="M155 330 C155 290 160 220 180 170"/>
+        </g>
+
+        <!-- Hojas -->
+        <g>
+          <ellipse class="leaves" cx="110" cy="260" rx="25" ry="12" transform="rotate(-25 110 260)"/>
+          <ellipse class="leaves" cx="190" cy="245" rx="28" ry="13" transform="rotate(18 190 245)"/>
+          <ellipse class="leaves" cx="135" cy="210" rx="22" ry="10" transform="rotate(-10 135 210)"/>
+          <ellipse class="leaves" cx="160" cy="180" rx="20" ry="10" transform="rotate(15 160 180)"/>
+          <ellipse class="leaves" cx="140" cy="150" rx="15" ry="8" transform="rotate(-15 140 150)"/>
+          <ellipse class="leaves" cx="170" cy="160" rx="18" ry="10" transform="rotate(10 170 160)"/>
+        </g>
+
+        <!-- Ramo de 4 flores separadas y con color distinto -->
+        <g class="flower-bunch">
+          <use xlink:href="#flower-shape" transform="translate(140,110) scale(1)" class="flower1"/>
+          <use xlink:href="#flower-shape" transform="translate(160,110) scale(1)" class="flower2"/>
+          <use xlink:href="#flower-shape" transform="translate(130,140) scale(1)" class="flower3"/>
+          <use xlink:href="#flower-shape" transform="translate(170,140) scale(1)" class="flower4"/>
+        </g>
+
+      </svg>
+
+      <div class="footer">🤍Te amo tanto amor mío🤍.</div>
+      <div class="edit-note">No se hacer estas cosas muy bien perdón🥺.</div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'e' && (e.ctrlKey || e.metaKey)){
+        const el = document.getElementById('frase');
+        const newText = prompt('Escribe la frase que quieres mostrar:', el.innerText);
+        if(newText !== null) el.innerHTML = '<span class="glow">'+newText+'</span>';
+      }
+    });
+  </script>
+</body>
+</html>

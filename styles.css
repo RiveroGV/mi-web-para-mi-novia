@@ -1,0 +1,123 @@
+:root {
+  --bg1: #040309;
+  --bg2: #06202a;
+  --accent: #ff74b1;
+  --text: #ffd3ea;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.02), transparent 1%),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1120px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding: 40px 20px;
+  border-radius: 16px;
+}
+
+.header {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(28px, 6vw, 48px);
+  margin-bottom: 24px;
+  text-shadow: 0 2px 8px rgba(255,100,160,0.25),
+               0 0 24px rgba(255,100,160,0.15);
+  color: var(--text);
+}
+
+.header .glow {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255,120,170,0.06), rgba(255,120,170,0.02));
+  box-shadow: 0 0 18px rgba(255,120,170,0.12);
+}
+
+.card {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.art {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+  transform-origin: bottom center;
+  animation: wind 10s ease-in-out infinite alternate;
+}
+
+@keyframes wind {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+.bg-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, #fff 0, transparent 60%);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  animation: float 8s linear infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0) translateX(0); }
+  50%  { transform: translateY(-30px) translateX(8px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.footer {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 14px;
+}
+
+.edit-note {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+.flower-center { fill: #fff; filter: drop-shadow(0 4px 12px rgba(255,200,230,0.4)); }
+.petals { fill: #ff5fa5; }
+.leaves { fill: #66d2b7; }
+.stem { stroke: #1d7f54; stroke-width: 6; stroke-linecap: round; fill: none; }
+
+/* Diferentes tonos de las flores */
+.flower1 .petals { fill: #ff5fa5; }
+.flower2 .petals { fill: #ff6bb2; }
+.flower3 .petals { fill: #ff72b9; }
+.flower4 .petals { fill: #ff87c5; }
+
+@media (max-width: 420px) {
+  .container { padding: 20px; }
+  .header { font-size: 28px; }
+}
